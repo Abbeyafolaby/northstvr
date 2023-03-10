@@ -3,3 +3,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dot {
+    color: #920701;
+    font-style: italic;
+}
+
+@media screen and (max-width: 765px) {
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

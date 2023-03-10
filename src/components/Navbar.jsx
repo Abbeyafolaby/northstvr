@@ -36,7 +36,7 @@ const Navbar = () => {
           </div>
           <Link to=".">
             <div className="md:hidden">
-              <img src={logomobile} alt="" className="ml-8" />
+              <img src={logo} alt="" className="ml-8" />
             </div>
           </Link>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Signin() {
   const [email, setEmail] = useState("");
@@ -36,9 +36,18 @@ function Signin() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex flex-col gap-y-4 justify-center items-center h-screen">
+      <h1 className="text-3xl font-Roboto font-medium">
+        Log in to you account
+      </h1>
+      <p className="font-Inter font-normal">
+        Don't have an account?{" "}
+        <Link to="/register" className="text-[#A93030]">
+          Create Account
+        </Link>
+      </p>
       <form
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-[#f5f5f5] shadow-md rounded px-8 pt-6 pb-8 mb-4"
         onSubmit={handleSubmit}
       >
         <div className="mb-4">
@@ -72,7 +81,7 @@ function Signin() {
         </div>
         <div className="flex items-center justify-between">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-[#A93030] hover:text-[#A93030] hover:bg-white transition-all duration-500 ease-in-out text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Log in

@@ -36,7 +36,7 @@ function Account() {
       <h1 className="text-2xl font-Inter font-medium">My Profile</h1>
       <img
         className="h-20 w-20 rounded-full object-cover my-4"
-        src={user && user.photoURL || profileImg}
+        src={user ? user.photoURL : profileImg}
         alt="Profile"
       />
       <div className="my-4">
@@ -47,7 +47,7 @@ function Account() {
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="name"
           type="text"
-          placeholder={user && user.displayName || "Star User"}
+          placeholder={user ? user.displayName : "Star User"}
           disabled
         />
       </div>
@@ -59,7 +59,7 @@ function Account() {
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="email"
           type="email"
-          placeholder={user && user.email}
+          placeholder={user ? user.email : "staruser@email.com"}
           disabled
         />
       </div>

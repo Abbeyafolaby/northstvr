@@ -1,25 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import profileImg from "../assets/no-profile.jpg";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { User } from "../context/UserContext";
+
 
 function Account() {
-   const [user, setUser] = useState({});
    const navigate = useNavigate()
-   const logout = () => {
-      return signOut(auth);
-    };
-
-    useEffect(() => {
-      const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-        console.log(currentUser);
-        setUser(currentUser);
-      });
-      return () => {
-        unsubscribe();
-      };
-    }, []);
+   const { logout, user } = User()
 
           const handleLogout = async () => {
             try {

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword} from "firebase/auth";
-import { auth } from "../firebase";
+import { User } from "../context/UserContext";
 import { useNavigate, Link } from "react-router-dom";
 
 function Signin() {
@@ -8,6 +7,7 @@ function Signin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { signIn } = User()
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -17,9 +17,6 @@ function Signin() {
     setPassword(event.target.value);
   };
 
-  const signIn = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();

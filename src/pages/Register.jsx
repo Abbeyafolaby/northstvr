@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { User } from "../context/UserContext";
 import { useNavigate, Link } from "react-router-dom";
 
  
@@ -9,6 +8,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate()
+  const { createUser } = User()
 
 
 
@@ -20,9 +20,6 @@ function Register() {
     setPassword(event.target.value);
   };
 
-const createUser = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password)
-}
 
 
   const handleSubmit = async (event) => {

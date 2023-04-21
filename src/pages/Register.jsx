@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { User } from "../context/UserContext";
 import { useNavigate, Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
  
 function Register() {
@@ -29,10 +30,12 @@ function Register() {
     try {
       await createUser(email, password)
       navigate('/')
+      toast.success("You registration was successful")
     } catch (e) {
       setError(e.message);
       console.log(e.message);
       alert(e.message)
+      toast.error(e.message)
     }
   };
 

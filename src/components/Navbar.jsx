@@ -6,11 +6,13 @@ import logomobile from "../assets/logo.png";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { VscAccount } from "react-icons/vsc";
 import { FcShop } from "react-icons/fc";
+import { cartProducts } from "../context/CartContext";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const {itemAmount} = cartProducts()
 
   function handleNav() {
     setNav(!nav);
@@ -100,7 +102,7 @@ const Navbar = () => {
             <Link to="cart">
               <BsBag className="text-2xl" />
               <div className="bg-red-500 absolute -right-2 -top-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center ">
-                1
+                {itemAmount}
               </div>
             </Link>
           </div>

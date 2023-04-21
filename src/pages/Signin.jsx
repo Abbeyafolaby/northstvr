@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { User } from "../context/UserContext";
 import { useNavigate, Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Signin() {
   const [email, setEmail] = useState("");
@@ -25,10 +27,11 @@ function Signin() {
     try {
       await signIn(email, password);
       navigate("/");
+      toast.success("You have logged in successfully")
     } catch (e) {
       setError(e.message);
       console.log(e.message);
-      alert(e.message);
+      toast.error(e.message);
     }
   };
 
@@ -85,8 +88,10 @@ function Signin() {
           </button>
         </div>
       </form>
+
     </div>
   );
 }
+
 
 export default Signin;

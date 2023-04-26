@@ -15,4 +15,20 @@
         align-items: center;
         justify-content: center;
     }
+
+    .foo {
+        width: 300px;
+    }
+}
+
+.swiper-button-prev {
+    color: #920701 
+}
+
+.swiper-button-next {
+    color: #920701; 
+}
+
+.swiper-pagination-bullet-active {
+     background-color: #920701 ;
 }

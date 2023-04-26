@@ -6,6 +6,7 @@ import { UserContextProvider } from './context/UserContext'
 import { CartProvider } from './context/CartContext'
 import { ProductProvider } from './context/ProductContext'
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <CartProvider>
     <ProductProvider>

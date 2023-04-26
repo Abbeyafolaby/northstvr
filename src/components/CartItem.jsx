@@ -11,11 +11,11 @@ const CartItem = ({ item }) => {
 
   const remove = () => {
     removeFromCart(id);
-    toast.success("Item removed")
+    toast.success("Item removed from cart")
   }
   return (
-    <div className="flex gap-x-4 py-2 lg:px-6 border-b border-gray-200 w-full font-light text-gray-500">
-      <div className="w-full min-h-[150px] flex items-center gap-x-4">
+    <div className="flex justify-center gap-x-4 py-2 lg:px-6 border-b border-gray-200 w-full font-light text-gray-500">
+      <div className="w-full md:w-[500px] lg:w-[700px] min-h-[150px] flex items-center gap-x-4">
         <Link to={`/product/${id}`}>
           <img src={image} className="max-w-[80px]" alt="" />
         </Link>

@@ -1,18 +1,23 @@
 import { ProductsItems } from '../../context/ProductContext';
 import Product from '../../components/Product';
+import Loading from '../../components/Loading';
 
 
 const Products = () => {
-  const { products } = ProductsItems();
+  const { products, isLoading } = ProductsItems();
   const filteredProducts = products.filter((item) => {
     return (
       item.category === "men's clothing" || item.category === "women's clothing"
     );
   });
 
+  if (isLoading) {
+    return <Loading />
+  }
+
 
   return (
-    <div className="">
+    <div className="px-8">
       <section className="py-16">
         <div className="container mx-auto">
           <h1 className="font-Roboto font-bold text-lg md:text-center">

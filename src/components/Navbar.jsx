@@ -63,7 +63,7 @@ const Navbar = () => {
                     >
                       <li
                         className="py-4 text-sm"
-                        onClick={() => setNav(false)}
+                        onClick={() => setIsOpen(!isOpen)}
                       >
                         Account
                       </li>
@@ -74,7 +74,7 @@ const Navbar = () => {
                     >
                       <li
                         className="py-4 text-sm"
-                        onClick={() => setNav(false)}
+                        onClick={() => setIsOpen(!isOpen)}
                       >
                         Login
                       </li>
@@ -85,7 +85,7 @@ const Navbar = () => {
                     >
                       <li
                         className="py-4 text-sm"
-                        onClick={() => setNav(false)}
+                        onClick={() => setIsOpen(!isOpen)}
                       >
                         Create Account
                       </li>

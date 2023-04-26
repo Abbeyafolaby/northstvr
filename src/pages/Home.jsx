@@ -5,15 +5,24 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
-import home1 from "../assets/home1.png";
+// import home1 from "../assets/home1.png";
 import home2 from "../assets/home2.jpg";
 import home3 from "../assets/home3.jpg";
 import home4 from "../assets/home4.jpg";
 import home5 from "../assets/home5.jpg";
 import home6 from "../assets/home6.png";
 import { categories } from "../../data";
+import Products from './products/Products';
+import { ProductsItems } from "../context/ProductContext";
+import Loading from '../components/Loading';
 
 const Home = () => {
+    const { isLoading } = ProductsItems();
+
+      if (isLoading) {
+        return <Loading />;
+      }
+
   return (
     <div>
       <div className="md:hidden">
@@ -31,8 +40,11 @@ const Home = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <img src={home1} alt="" />
+          </SwiperSlide> */}
+          <SwiperSlide>
+            <img src={home5} alt="" />
           </SwiperSlide>
           <SwiperSlide>
             <img src={home2} alt="" />
@@ -42,9 +54,6 @@ const Home = () => {
           </SwiperSlide>
           <SwiperSlide>
             <img src={home4} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={home5} alt="" />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -65,7 +74,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className='px-6 my-6'>
+      <div className="px-6 my-6">
         <h1 className="font-Roboto font-bold text-lg md:text-center">
           TRENDING
         </h1>
@@ -85,6 +94,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Products />
     </div>
   );
 }

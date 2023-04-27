@@ -22,21 +22,21 @@ const ProductsDetails = () => {
   const { title, description, price, rating, image } = product;
 
   const add = () => {
-    addToCart(product, id);
+    addToCart(product, product.id);
     toast.success("item added to cart");
   };
 
   return (
-    <div className="max-w-md mx-auto pt-16 pb-5 px-4 bg-white overflow-hidden md:max-w-2xl">
-      <div className="md:flex">
+    <div className="max-w-md mx-auto pt-16 pb-5 px-4 bg-white overflow-hidden md:max-w-2xl lg:max-w-3xl">
+      <div className="md:flex ">
         <div className="md:flex-shrink-0">
           <img
-            className="h-full w-full object-cover md:w-48"
+            className="h-full w-full object-cover md:w-64"
             src={image}
             alt={title}
           />
         </div>
-        <div className="p-8">
+        <div className="p-4">
           <div className="uppercase tracking-wide text-sm text-[#A93030] font-semibold">
             {title}
           </div>
@@ -50,7 +50,7 @@ const ProductsDetails = () => {
             <span className="ml-2 text-gray-600">{rating.rate}/5 stars</span>
           </div>
           <div className="mt-4 text-black-600 text-lg font-medium">
-            ${price * 200}
+            ₦ {price * 200}
           </div>
           <button
             onClick={add}

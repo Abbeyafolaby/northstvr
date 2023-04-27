@@ -38,7 +38,6 @@ const Product = ({ product }) => {
           </button>
           <Link
             to={`/products/${id}`}
-            // to="/"
             className="w-12 h-12 bg-white flex justify-center items-center text-primary drop-shadow-xl"
           >
             <BsEyeFill />
@@ -47,13 +46,10 @@ const Product = ({ product }) => {
       </div>
       <div>
         <div className="text-sm capitalize text-gray-500 mb-1">{category}</div>
-        <Link
-          to={`/products/${id}`}
-          // to="/"
-        >
+        <Link to={`/products/${id}`}>
           <h2 className="mb-1 font-semibold">{title}</h2>
         </Link>
-        <div className="font-semibold">$ {price * 200}</div>
+        <div className="font-semibold">₦ {price * 200}</div>
       </div>
     </div>
   );

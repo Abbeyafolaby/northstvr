@@ -9,7 +9,7 @@ function Signin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { signIn } = User()
+  const { signIn, signInWithGoogle } = User()
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -34,6 +34,17 @@ function Signin() {
       toast.error(e.message);
     }
   };
+
+  const googleLogin = async () => {
+    try {
+      await signInWithGoogle();
+      navigate("/")
+      toast.success("You have logged in successfully");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
 
   return (
     <div className="flex flex-col gap-y-4 justify-center items-center h-screen">
@@ -88,7 +99,12 @@ function Signin() {
           </button>
         </div>
       </form>
-
+      <button
+          onClick={googleLogin}
+          className="px-4 py-2 border flex gap-2 border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
+          <img className="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo" />
+          <span>Login with Google</span>
+      </button>
     </div>
   );
 }

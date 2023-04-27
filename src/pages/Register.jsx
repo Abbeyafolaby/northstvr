@@ -9,7 +9,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate()
-  const { createUser } = User()
+  const { createUser, signInWithGoogle } = User()
 
 
 
@@ -38,6 +38,19 @@ function Register() {
       toast.error(e.message)
     }
   };
+
+    const googleRegister = async () => {
+      try {
+        await signInWithGoogle();
+        navigate("/");
+        toast.success("You registration was successful");
+      } catch (err) {
+        console.log(err);
+        toast.error(err);
+      }
+    };
+
+
 
   return (
     <div className="flex flex-col gap-y-4 justify-center items-center h-screen">
@@ -90,6 +103,15 @@ function Register() {
           </button>
         </div>
       </form>
+      <button onClick={googleRegister} className="px-4 py-2 border flex gap-2 border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
+        <img
+          className="w-6 h-6"
+          src="https://www.svgrepo.com/show/475656/google-color.svg"
+          loading="lazy"
+          alt="google logo"
+        />
+        <span>Sign in with Google</span>
+      </button>
     </div>
   );
 }

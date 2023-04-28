@@ -11,6 +11,7 @@ import Checkout from "./pages/Checkout"
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ScrollToTop from "./components/ScrollToTop"
+import ProtectedRoute from "./components/ProtectedRoute"
 
 function App() {
   
@@ -23,12 +24,47 @@ function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="register" element={<Register />} />
-              <Route path="account" element={<Account />} />
-              <Route path="cart" element={<Cart />} />
+              <Route
+                path="account"
+                element={
+                  <ProtectedRoute>
+                    <Account />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="cart"
+                element={
+                  <ProtectedRoute>
+                    <Cart />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="signin" element={<Signin />} />
-              <Route path="products" element={<Products />} />
-              <Route path="/products/:id" element={<ProductsDetails />} />
-              <Route path="checkout" element={<Checkout />} />
+              <Route
+                path="products"
+                element={
+                  <ProtectedRoute>
+                    <Products />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/products/:id"
+                element={
+                  <ProtectedRoute>
+                    <ProductsDetails />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="checkout"
+                element={
+                  <ProtectedRoute>
+                    <Checkout />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
           </Routes>
         </ScrollToTop>

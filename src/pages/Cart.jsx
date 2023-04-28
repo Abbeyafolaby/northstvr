@@ -1,15 +1,18 @@
 import CartIsEmpty from "../components/CartIsEmpty";
 import CartItem from "../components/CartItem";
+import { useNavigate } from "react-router-dom";
 import { cartProducts } from "../context/CartContext";
 import { FiTrash2 } from "react-icons/fi";
 import { toast } from "react-toastify";
 import { User } from "../context/UserContext";
 import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3'
 import vector from "../assets/Vector.png"
+import { Paystack } from "../components/Payment";
 
 
 const Cart = () => {
 const {cart, total, itemAmount, clearCart} = cartProducts()
+const navigate = useNavigate()
 
     const { user } = User();
 
@@ -37,8 +40,12 @@ const {cart, total, itemAmount, clearCart} = cartProducts()
       callback: (response) => {
         console.log(response);
         closePaymentModal(); // this will close the modal programmatically
+        toast.success("Thank you for shopping with us!");
+        clearCart();
+        navigate("/");
       },
-      onClose: () => {},
+      onClose: () => {
+      },
     };
 
   const clear = () => {
@@ -93,6 +100,7 @@ const {cart, total, itemAmount, clearCart} = cartProducts()
             {...fwConfig}
             className="bg-[#FF9F0D] w-full text-white rounded mb-2 h-[40px] cursor-pointer"
           />
+          <Paystack />
         </div>
       </div>
     </div>

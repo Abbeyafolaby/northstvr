@@ -30,7 +30,7 @@ function Register() {
     try {
       await createUser(email, password)
       navigate('/')
-      toast.success("You registration was successful")
+      toast.success("Your registration was successful")
     } catch (e) {
       setError(e.message);
       console.log(e.message);
@@ -43,7 +43,7 @@ function Register() {
       try {
         await signInWithGoogle();
         navigate("/");
-        toast.success("You registration was successful");
+        toast.success("Your registration was successful");
       } catch (err) {
         console.log(err);
         toast.error(err);
@@ -110,7 +110,7 @@ function Register() {
           loading="lazy"
           alt="google logo"
         />
-        <span>Sign in with Google</span>
+        <span>Sign up with Google</span>
       </button>
     </div>
   );

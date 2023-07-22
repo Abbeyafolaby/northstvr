@@ -1,7 +1,5 @@
 # Northstvr E-commerce Website
 
-![Northstvr E-commerce Website](screenshot.png)
-
 Northstvr is an E-commerce website built with React and styled with TailwindCSS. The website allows users to browse through a wide range of products and add them to their cart. It also features a robust user authentication system powered by Firebase, ensuring a secure and personalized shopping experience. Additionally, the website integrates with both Paystack and Flutterwave for seamless payment processing of selected items.
 
 ## Demo

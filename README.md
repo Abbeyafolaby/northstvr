@@ -1,68 +1,54 @@
 # Northstvr E-commerce Website
 
-This is an E-commerce website built with React, styled with TailwindCSS, and hosted on Firebase. The website allows users to browse through various products and add them to their cart. It also has a user authentication system with Firebase.
-Paystack and Flutterwave is integrated for the payment of items selected.
+![Northstvr E-commerce Website](screenshot.png)
 
+Northstvr is an E-commerce website built with React and styled with TailwindCSS. The website allows users to browse through a wide range of products and add them to their cart. It also features a robust user authentication system powered by Firebase, ensuring a secure and personalized shopping experience. Additionally, the website integrates with both Paystack and Flutterwave for seamless payment processing of selected items.
+
+## Demo
+
+Check out the live demo of the Northstvr E-commerce Website [here](https://northstvrs.web.app/#/).
+
+## Technology Used
+
+The project utilizes the following technologies:
+
+- React: A popular JavaScript library for building user interfaces.
+- TailwindCSS: A utility-first CSS framework for styling the website.
+- Firebase: A cloud-based platform that provides various services, including authentication and hosting.
+- Paystack and Flutterwave: Payment gateways integrated into the website for secure and smooth payment processing.
 
 ## Installation
 
-To get started, clone this repository to your local machine using the following command:
+To get started with the project, follow these steps:
+
+1. Clone this repository to your local machine using the following command:
 
 ```bash
-
 git clone https://github.com/Abbeyafolaby/northstvr.git
-
 ```
 
-Next, install the project dependencies using npm:
+2. Navigate to the project directory:
 
 ```bash
-
 cd northstvr
+```
 
+3. Install the project dependencies using npm:
+
+```bash
 npm install
-
 ```
 
 ## Usage
 
-To run the development server, use the following command:
+To run the development server and preview the website, use the following command:
 
 ```bash
-
 npm run dev
-
 ```
 
 This will start the development server at `http://localhost:3000`. You can then access the website by navigating to this URL in your web browser.
 
-## Firebase Setup
-
-This project uses Firebase for hosting and user authentication. To set up Firebase for this project, follow these steps:
-
-1. Create a new Firebase project at [https://console.firebase.google.com](https://console.firebase.google.com).
-
-2. In the Firebase console, navigate to the Authentication tab and enable the email/password sign-in method.
-
-3. In the Firebase console, navigate to the Hosting tab and follow the instructions to set up hosting for your project.
-
-4. Once hosting is set up, you can deploy your project to Firebase by running the following command:
-
-   ```bash
-
-   npm run build
-
-   firebase deploy
-
-   ```
-
-   This will build your project and deploy it to Firebase hosting.
-
-   
-
-
-
 ## Contributing
 
-Contributions are welcome! If you have any bug reports, feature requests, or other contributions, please open an issue or a pull request on this repository.
-
+Contributions are highly appreciated! If you encounter any bugs, have feature requests, or would like to make other contributions, please open an issue or a pull request on this repository. Let's build this project together!
